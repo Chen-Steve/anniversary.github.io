@@ -128,7 +128,7 @@ setTimeout(() => {
 
 setTimeout(() => {
     slowDown();
-}, 6000);
+}, 4000);
 
 
 function heartShapeDerivative(t, scale) {
@@ -160,5 +160,5 @@ setTimeout(() => {
     explode();
     document.getElementById('sentence').style.bottom = '50%';
     document.getElementById('sentence').style.opacity = '1';
-    document.getElementById('sentence').style.fontSize = '24px';
+    document.getElementById('sentence').style.fontSize = '36px';
 }, 8000);

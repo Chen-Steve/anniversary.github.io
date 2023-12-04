@@ -6,26 +6,43 @@
     <title>2 year Anniversary :)</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="heart.css">
+    <link rel="stylesheet" type="text/css" href="date.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <div id="content">
+        <h2 id="together">小兔子 We have been together for</h2>
+        <div id="timer">
+            <b id="d"></b> Days 
+            <b id="h"></b> Hours
+            <b id="m"></b> Minutes and
+            <b id="s"></b> Seconds!
+        </div>
+    </div>
+
     <!-- Canvas for Heart Animation -->
     <canvas id="heartCanvas"></canvas>
     <div id="sentence">
-        Happy 2 Year Anniversary<br/>
-        小兔子!<br/>
+        Happy Anniversary<br/>
+        Sophia!<br/>
     </div>
 
     <!-- Container for Origami SVGs -->
     <div id="origami-container">
         <img class="origami" src="panda.svg" alt="Origami Panda">
         <img class="origami" src="sammy.svg" alt="Origami Cat">
+        <img class="origami" src="swan.svg" alt="Origami Swan">
+        <img class="origami" src="fox.svg" alt="Origami Fox">
+        <img class="origami" src="squirrel.svg" alt="Origami Squirrel">
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/Draggable.min.js"></script>
     <script src="origami.js"></script>
     <script src="heart.js"></script>
+    <script src="date.js"></script>
+
 </body>
 </html>
