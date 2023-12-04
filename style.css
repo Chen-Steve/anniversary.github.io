@@ -70,3 +70,81 @@ body, html {
     text-align: center;
     z-index: 2;
 }
+
+
+/* GALLERY */
+#gallery-container {
+    width: 80%;
+    max-width: 1200px; /* Maximum width for large screens */
+    margin: 20px auto;
+    position: relative;
+    top: 23rem;
+    z-index: 4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Slight rounding of corners */
+    overflow: hidden; /* Ensures the images conform to border radius */
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transition for the sliding effect */
+}
+
+.gallery-image {
+    width: 100%; /* Ensures image takes the full width of its parent */
+    height: 200px; /* Set a fixed height for your images */
+    object-fit: cover; /* Ensures the aspect ratio is maintained without stretching the image */
+    display: block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.gallery-nav {
+    text-align: center;
+    margin-top: 20px; /* Add some space between the images and the buttons */
+}
+
+
+#prev, #next {
+    padding: 10px 15px; /* Larger area for easier clicking */
+    margin: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
+    border: none; /* Remove default border */
+    border-radius: 30px; /* Rounded buttons */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for the buttons */
+}
+
+#prev { left: 10px; }
+#next { right: 10px; }
+
+#prev:hover, #next:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 768px) {
+    #gallery-container {
+        width: 95%;
+        top: 20rem;
+    }
+
+    .gallery {
+        height: auto; /* Adjust for smaller screens */
+    }
+
+    .gallery-image {
+        height: auto; /* Adjust for smaller screens */
+    }
+
+    .gallery-nav {
+        margin-top: 10px; /* Less space on smaller screens */
+    }
+
+    #prev, #next {
+        padding: 5px 10px; /* Smaller buttons on small screens */
+    }
+}
+

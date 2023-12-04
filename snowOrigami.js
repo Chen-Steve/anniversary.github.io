@@ -170,3 +170,32 @@ document.querySelectorAll('.origami').forEach(origami => {
     });
 });
 
+// GALLERY
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('.gallery-image');
+    let currentIndex = 0;
+
+    function showImage(index) {
+        const offset = index * -100; // Calculate the transform offset
+        document.querySelector('.gallery').style.transform = `translateX(${offset}%)`; // Apply the transform
+    }
+
+    document.getElementById('prev').addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            showImage(currentIndex);
+        }
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+        if (currentIndex < images.length - 1) {
+            currentIndex++;
+            showImage(currentIndex);
+        }
+    });
+
+    // Initialize the gallery to show the first image
+    showImage(currentIndex);
+});
+
+
