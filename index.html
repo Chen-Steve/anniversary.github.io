@@ -8,6 +8,13 @@
     <link rel="stylesheet" type="text/css" href="date.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <!-- Remixicons for arrows in the swiper -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+
 </head>
 <body>
 
@@ -20,17 +27,21 @@
             <b id="s"></b> Seconds!
         </div>
 
-        <!-- Gallery Container -->
-        <div id="gallery-container">
-            <div class="gallery">
-                <img src="public/gallery/hugCat.jpg" alt="Image 1" class="gallery-image" />
-                <img src="public/gallery/dinner.jpg" alt="Image 2" class="gallery-image" />
-                <img src="public/gallery/monadnock.jpg" alt="Image 3" class="gallery-image" />
-                <!-- Add more images as needed -->
+        <div class="carousel">
+            <div class="carousel__images">
+                <img src="public/gallery/hugCat.JPG" class="carousel__image" alt="Image 1">
+                <img src="public/gallery/monadnock.JPG" class="carousel__image" alt="Image 2">
+                <img src="public/gallery/museum.JPG" class="carousel__image" alt="Image 3">
+                <img src="public/gallery/pottery.JPG" class="carousel__image" alt="Image 4">
+                <img src="public/gallery/redHat.JPG" class="carousel__image" alt="Image 5">
+                <img src="public/gallery/tireSwing.JPG" class="carousel__image" alt="Image 6">
+                <img src="public/gallery/snowAngel.JPG" class="carousel__image" alt="Image 7">
+                <img src="public/gallery/sixFlags.JPG" class="carousel__image" alt="Image 8">
+                <img src="public/gallery/dinner.JPG" class="carousel__image" alt="Image 9">
             </div>
-            <button id="prev">Prev</button>
-            <button id="next">Next</button>
-        </div>
+            
+          </div>
+          
     </div>
 
     <!-- Canvas for Heart Animation -->
@@ -54,6 +65,5 @@
     <script src="heart.js"></script>
     <script src="date.js"></script>
     <script src="snowOrigami.js"></script>
-
 </body>
 </html>

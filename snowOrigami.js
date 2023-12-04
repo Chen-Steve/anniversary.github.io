@@ -198,4 +198,68 @@ document.addEventListener("DOMContentLoaded", function() {
     showImage(currentIndex);
 });
 
+// CAROUSEL
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel__image');
+const totalSlides = slides.length;
+const imagesContainer = document.querySelector('.carousel__images');
+let slideInterval;
+
+function showSlide(index) {
+    // Disable transition for instant change when wrapping around
+    if (index >= totalSlides) {
+      imagesContainer.style.transition = 'none';
+      index = 0;
+    } else if (index < 0) {
+      imagesContainer.style.transition = 'none';
+      index = totalSlides - 1;
+    } else {
+      // Re-enable transitions for normal slide behavior
+      imagesContainer.style.transition = 'transform 0.5s ease';
+    }
+  
+    // Move the image container
+    const offset = -index * 100; // assuming each image takes up 100% of the container width
+    imagesContainer.style.transform = `translateX(${offset}%)`;
+  
+    // Update the current slide index
+    currentSlide = index;
+  }
+  
+  // Add an event listener to re-enable transitions after disabling them
+  imagesContainer.addEventListener('transitionend', () => {
+    imagesContainer.style.transition = 'transform 0.5s ease';
+  });
+  
+
+  function moveSlide(direction) {
+    // Clear the interval to stop auto-swiping
+    clearInterval(slideInterval);
+  
+    // Move to the next or previous slide
+    showSlide(currentSlide + direction);
+  
+    // Optionally restart the auto-swiping after a manual button click
+    // If you don't want to auto-swipe after clicking a button, remove this line
+    startSlideShow();
+  }
+
+// Auto-play functionality
+function startSlideShow() {
+  slideInterval = setInterval(() => {
+    showSlide(currentSlide + 1);
+  }, 3000); // Change slide every 3 seconds
+}
+
+
+// Start the slideshow
+startSlideShow();
+
+// Event listeners for next/previous buttons
+document.querySelector('.carousel__button--left').addEventListener('click', () => moveSlide(-1));
+document.querySelector('.carousel__button--right').addEventListener('click', () => moveSlide(1));
+
+// Initialize the first slide
+showSlide(currentSlide);
+
 
