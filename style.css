@@ -43,7 +43,7 @@ body, html {
 .origami:nth-child(3) {
     animation-name: float3;
     left: 45%; /* crane */
-    top: 20%;
+    top: 15%;
 }
 
 .origami:nth-child(4) {
@@ -59,3 +59,14 @@ body, html {
 }
 
 
+#sentence {
+    font-family: 'Indie Flower', cursive; 
+    font-size: 0;
+    font-weight: bold;
+    position: absolute;
+    bottom: -200px;
+    transition: all 2s;
+    opacity: 0;
+    text-align: center;
+    z-index: 2;
+}
