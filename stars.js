@@ -1,5 +1,7 @@
 // Define the star properties
 const stars = [];
+let accumulatedSnow = 0;
+const maxLevels = 3; 
 
 function createStar() {
     stars.push({
@@ -12,10 +14,11 @@ function createStar() {
 
 function updateStars() {
     for (let i = 0; i < stars.length; i++) {
-        stars[i].y += stars[i].speed; // Ensure movement down
+        stars[i].y += stars[i].speed;
         if (stars[i].y > canvas.height) {
-            stars.splice(i, 1); // Remove star if it goes off screen
-            i--; // Adjust the index after removal
+            stars.splice(i, 1);
+            accumulatedSnow++;
+            i--;
         }
     }
 }
@@ -29,6 +32,23 @@ function drawStars() {
     });
 }
 
+function drawSnowPile() {
+    let level = Math.min(Math.floor(accumulatedSnow / 10), maxLevels); // Change 10 to adjust accumulation speed
+
+    // Adjust the height and slope based on the level
+    let height = level * 20; // Change 20 to adjust the height of each level
+    let slope = 20 * level; // Adjust the slope of each level
+
+    ctx.beginPath();
+    ctx.moveTo(0, canvas.height);
+    ctx.lineTo(canvas.width, canvas.height);
+    ctx.lineTo(canvas.width, canvas.height - height);
+    ctx.quadraticCurveTo(canvas.width / 2, canvas.height - height - slope, 0, canvas.height - height);
+    ctx.closePath();
+    ctx.fillStyle = 'white';
+    ctx.fill();
+}
+
 // Update the animate function
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -38,8 +58,9 @@ function animate() {
     drawParticles(); // Existing heart particles
     updateStars(); // Update positions of stars
     drawStars(); // Draw the stars
+    drawSnowPile(); // Draw the snow pile
 
-    animationID = requestAnimationFrame(animate); // Continuously animate
+    animationID = requestAnimationFrame(animate);
 }
 
 // Random interval generation for new stars
