@@ -72,6 +72,30 @@ body, html {
     z-index: 2;
 }
 
+/* Style for the Fireworks button */
+#fireworksButton {
+  font-family: 'Indie Flower', cursive; 
+  background-color: #e7674a; /* Button background color */
+  color: white; 
+  border: none;
+  top: 12rem;
+  left: 45rem;
+  padding: 10px 50px; 
+  border-radius: 5px; 
+  font-size: 16px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+  z-index: 3;
+}
+
+/* Hover effect for the button */
+#fireworksButton:hover {
+  background-color: #ff3300; /* Change background color on hover */
+  transform: translateY(-5px); /* Move the button up slightly on hover */
+}
+
+
+
 /* Carousel */
 .carousel {
     position: relative;
